@@ -1,0 +1,208 @@
+body {
+    background-color: #2F4F30;
+    background-image: url('../img/ranas_jugando.png');
+    background-repeat: no-repeat;
+    background-size: 100vw;
+    background-position: center center;
+    color: #ffffff;
+    font-family: 'Press Start 2P', cursive;
+    box-shadow: inset 0 0 100px rgba(0,0,0,0.6);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.titulo {
+  margin-top: 10px;
+  color: #ffffff;
+  text-align: center;
+  padding: 40px;
+  font-size: 60px;
+  font-weight: bold;
+  filter: drop-shadow(0 0 3px gold);
+}
+
+.carta {
+    position: relative;
+    width: 200px;
+    left: 100px;
+    margin-left: -100px;
+    filter: drop-shadow(2px 2px 10px #333333);
+    transform: rotate(5deg);
+    margin-top: 20px;
+    transition: transform 0.4s ease-in-out, filter 0.4s ease-in-out;
+}
+
+/* Contenedores de cartas */
+#ia-cartas, #jugador-cartas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    height: 240px;
+    margin-top: 60px;
+}
+
+.marcador {
+  background-color: rgba(0,0,0,.3);
+}
+
+.name {
+  font-size: 40px;
+  color: black;
+  filter: drop-shadow(0 0 2px gold);
+  font-weight: bolder;
+  background:rgba(0,0,0,.6);
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+/* Cartas animadas al entrar */
+@keyframes carta-entra {
+    0%   { transform: scale(0.2) rotate(-45deg); opacity: 0; }
+    60%  { transform: scale(1.1) rotate(5deg); opacity: 1; }
+    100% { transform: scale(1) rotate(0); }
+}
+
+.carta-animada {
+    animation: carta-entra 0.6s ease-out forwards;
+}
+
+/* Cartas con flotación suave */
+@keyframes flotar {
+    0%   { transform: translateY(0) rotate(0.5deg); }
+    50%  { transform: translateY(-5px) rotate(-0.5deg); }
+    100% { transform: translateY(0) rotate(0.5deg); }
+}
+
+.carta-flotante {
+    animation: flotar 2s ease-in-out infinite;
+}
+
+/* Mensajes de resultado */
+.boton {
+  background-color: #2c2c2c; /* negro suave */
+  color: #f5e9c4; /* dorado pálido */
+  border: 2px solid gold;
+  font-family: 'Cinzel', serif;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.boton:hover {
+  background-color: #3d3d3d;
+  transform: scale(1.05);
+}
+.empate, .ganaste, .perdiste {
+    background-color: yellowgreen;
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+    font-weight: bold;
+    font-size: 2.5rem;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    margin-top: -10px !important;
+    text-transform: uppercase;
+    z-index: 10;
+    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+    opacity: 0.9;
+}
+
+.ganaste {
+    background-color: dodgerblue;
+}
+
+.perdiste {
+    background-color: #ff4d4d;
+}
+
+/* Animación brillante para mensajes ganadores */
+@keyframes brilla {
+    0%   { box-shadow: 0 0 10px #fff; }
+    100% { box-shadow: 0 0 25px #f0f; }
+}
+
+.mensaje-ganador {
+    animation: brilla 1s ease-in-out infinite alternate;
+}
+
+/* Mensaje con rebote al aparecer */
+@keyframes rebote {
+    0%   { transform: scale(0); opacity: 0; }
+    60%  { transform: scale(1.2); opacity: 1; }
+    100% { transform: scale(1); }
+}
+
+.mensaje-rebote {
+    animation: rebote 0.6s ease-out;
+}
+
+@media only screen and (max-width: 400px){
+body {
+    background-color: #2F4F30;
+    background-image: url('../img/ranas_jugando.png');
+    background-repeat: no-repeat;
+    background-size: 100vh;
+    color: #ffffff;
+    font-family: 'Press Start 2P', cursive;
+    box-shadow: inset 0 0 100px rgba(0,0,0,0.6);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+}
+.titulo {
+    text-align: center;
+    padding: 10px;
+    font-size: 40px;
+}
+.name {
+  font-size: 20px;
+  color: black;
+  filter: drop-shadow(0 0 2px gold);
+  font-weight: bolder;
+  background:rgba(0,0,0,.6);
+  padding: 2.5px 5px;
+  border-radius: 5px;
+  display: inline-block;
+  margin-top: 10px;
+}
+  .carta {
+    width: 100px;
+    left: 50px;
+    margin-left: -50px;
+    margin-top: -10px;
+  }
+#ia-cartas, #jugador-cartas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    height: 120px;
+    margin-top: 25px;
+}
+.empate, .ganaste, .perdiste {
+    font-size: 1rem;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+}
+
+.boton {
+  padding: 5px 10px;
+  margin-left: 5px;
+  border-radius: 8px;
+  font-size: 18px;
+}
+.boton:last-child {
+  margin-top: 8px;
+}
+}
