@@ -23,7 +23,6 @@ const miBlackJack= (() => {
 
   const iniciarJuego = (numeroJugadores = 2) => {
 
-    mazo = crearMazo();
 
     puntosParticipantes=[];
 
@@ -192,6 +191,7 @@ const turnoIa = async (puntosMinimos) => {
     iniciarJuego();
     btnPedir.disabled = false;
     btnStop.disabled = false;
+    mazo = crearMazo();
   })
 
   return {
