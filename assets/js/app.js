@@ -97,9 +97,10 @@ const miBlackJack= (() => {
   const crearCarta = (carta, turno )=> {
 
       const imgCarta = document.createElement('img')
-      imgCarta.src = `../assets/cartas/${carta}.png`
+      imgCarta.src = `../assets/cartas/${carta}.webp`
       imgCarta.classList.add('carta')
       imgCarta.classList.add('carta-animada');
+      imgCarta.loading = 'lazy';
       divCartasJugadores[turno].append(imgCarta);
 
     setTimeout(() => {
