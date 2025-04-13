@@ -21,6 +21,7 @@ body {
   font-size: 60px;
   font-weight: bold;
   filter: drop-shadow(0 0 3px gold);
+  font-family: 'Press Start 2P', cursive;
 }
 
 .carta {
@@ -164,6 +165,7 @@ body {
     text-align: center;
     padding: 10px;
     font-size: 40px;
+    font-family: 'Press Start 2P', cursive;
 }
 .name {
   font-size: 20px;
