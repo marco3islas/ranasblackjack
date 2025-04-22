@@ -1,6 +1,6 @@
 body {
     background-color: #2F4F30;
-    background-image: url('../img/ranas_jugando.png');
+    background-image: url('/assets/img/ranas_jugando.webp');
     background-repeat: no-repeat;
     background-size: 100vw;
     background-position: center center;
@@ -102,7 +102,7 @@ body {
   transform: scale(1.05);
 }
 .empate, .ganaste, .perdiste {
-    background-color: yellowgreen;
+    background-color: #3d4133;
     font-family: 'Press Start 2P', cursive;
     color: white;
     font-weight: bold;
@@ -150,7 +150,7 @@ body {
 @media only screen and (max-width: 400px){
 body {
     background-color: #2F4F30;
-    background-image: url('../img/ranas_jugando.png');
+    background-image: url('/assets/img/ranas_jugando.webp');
     background-repeat: no-repeat;
     background-size: 100vh;
     color: #ffffff;
@@ -207,4 +207,29 @@ body {
 .boton:last-child {
   margin-top: 8px;
 }
+}
+
+#divInstrucciones {
+  display: none;
+  background-color: sandybrown;
+  padding: 10px;
+  border-radius: 12px;
+  margin-top: 10px;
+  color: #000000;
+  font-family: 'Press Start 2P', cursive;
+  font-weight: bold;
+  box-shadow: 0 0 100px rgba(0,0,0,0.6);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 600px;
+  z-index: 1000;
+  opacity: 0.9;
+}
+
+@media only screen and (max-width: 400px){
+  #divInstrucciones {
+    width: 100%;
+  }
 }
